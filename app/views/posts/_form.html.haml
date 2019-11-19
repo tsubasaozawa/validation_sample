@@ -1,0 +1,22 @@
+= form_with(model: post, local: true) do |form|
+  .field
+    = form.label :title
+    = form.text_field :title
+      -# エラーメッセージの表示-------------------------
+      - if @post.errors.messages[:title].any?
+      %span.error
+        = @post.errors.messages[:title][0]
+      -# --------------------------------------------
+  .field
+    = form.label :content
+    = form.text_area :content
+      -# エラーメッセージの表示-------------------------
+      - if @post.errors.messages[:content].any?
+      %span.error
+        = @post.errors.messages[:content][0]
+      -# --------------------------------------------
+  .field
+    = form.label :image
+    = form.text_area :image
+  .actions
+    = form.submit
