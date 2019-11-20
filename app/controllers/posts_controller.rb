@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post, notice: 'Post was successfully created.'
     else
-      # render plain: @post.errors.inspect # エラーの中身を見るための記載
+      # render plain: @post.errors.inspect # エラーの中身を見たい場合はこちらを記載
       # # => #<ActiveModel::Errors:0x00007fc4a3b483f8 @base=#<Post id: nil, title: "", content: "", image: "", created_at: nil, updated_at: nil>, @messages={:title=>["can't be blank", "is too short (minimum is 3 characters)"], :content=>["can't be blank"]}, @details={:title=>[{:error=>:blank}, {:error=>:too_short, :count=>3}], :content=>[{:error=>:blank}]}>
       render :new
     end
